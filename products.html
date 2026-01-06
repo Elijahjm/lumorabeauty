@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection | LUMORA Beauty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/products.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+        <div class="container">
+            <a class="navbar-brand brand-logo" href="index.html">LUMORA <span>Beauty</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-contact px-4">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" style="height: 60vh;">
+        <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=2000'); height: 60vh;">
+            <div class="hero-overlay" style="background: rgba(0,0,0,0.6);">
+                <div class="container text-center text-white">
+                    <h1 class="display-3 slide-up">Our Products</h1>
+                    <p class="lead slide-up-delay-1">Curated Care for Every Skin Story</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sticky-toolbar bg-white shadow-sm sticky-top">
+        <div class="container py-2 py-lg-3">
+            <div class="row g-2 align-items-center">
+                <div class="col-12 col-lg-4">
+                    <div class="input-group search-box">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" id="productSearch" class="form-control border-start-0" placeholder="Search products...">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="filter-container">
+                        <div class="filter-group d-flex gap-2" id="filterButtonGroup">
+                            <button class="btn btn-filter active" onclick="filterProducts('all', event)">All</button>
+                            <button class="btn btn-filter" onclick="filterProducts('serums', event)">Serums</button>
+                            <button class="btn btn-filter" onclick="filterProducts('cleansers', event)">Cleansers</button>
+                            <button class="btn btn-filter" onclick="filterProducts('masks', event)">Masks</button>
+                            <button class="btn btn-filter" onclick="filterProducts('moisturizers', event)">Moisturizers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="alert alert-light border-0 shadow-sm text-center mb-5 rounded-4 p-4 delivery-info-bar">
+                <div class="row g-3">
+                    <div class="col-md-4"><i class="bi bi-truck me-2 text-pink"></i> Free Delivery in Town</div>
+                    <div class="col-md-4"><i class="bi bi-geo-alt me-2 text-pink"></i> Fee applied outside Town</div>
+                    <div class="col-md-4"><i class="bi bi-cash-stack me-2 text-pink"></i> Payment Upon Delivery</div>
+                </div>
+            </div>
+
+            <div class="row g-4" id="mainProductGrid">
+                
+                <div class="col-12 mt-5 product-category" data-type="serums">
+                    <h3 class="playfair mb-4 border-bottom pb-2">Signature Serums</h3>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="serums" data-name="Midnight Glow Serum">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Midnight Glow Serum</h5>
+                            <p class="text-muted small">Rejuvenating overnight rosehip serum.</p>
+                            <p class="fw-bold text-pink">$45.00</p>
+                            <button onclick="orderViaWhatsApp('Midnight Glow Serum', '$45.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="serums" data-name="Vitamin C Radiance">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Vitamin C Radiance</h5>
+                            <p class="text-muted small">Brightening serum for uneven skin tone.</p>
+                            <p class="fw-bold text-pink">$48.00</p>
+                            <button onclick="orderViaWhatsApp('Vitamin C Radiance', '$48.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="serums" data-name="Hyaluronic Plumping Drops">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Hyaluronic Drops</h5>
+                            <p class="text-muted small">Deep hydration for a bouncy look.</p>
+                            <p class="fw-bold text-pink">$42.00</p>
+                            <button onclick="orderViaWhatsApp('Hyaluronic Plumping Drops', '$42.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="serums" data-name="Retinol Night Repair">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Retinol Night Repair</h5>
+                            <p class="text-muted small">Advanced anti-aging evening treatment.</p>
+                            <p class="fw-bold text-pink">$55.00</p>
+                            <button onclick="orderViaWhatsApp('Retinol Night Repair', '$55.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="serums" data-name="Calming Botanical Oil">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Botanical Face Oil</h5>
+                            <p class="text-muted small">Soothing organic blend for sensitive skin.</p>
+                            <p class="fw-bold text-pink">$40.00</p>
+                            <button onclick="orderViaWhatsApp('Botanical Face Oil', '$40.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5 product-category" data-type="cleansers">
+                    <h3 class="playfair mb-4 border-bottom pb-2">Gentle Cleansers</h3>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="cleansers" data-name="Radiance Cleansing Oil">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Radiance Cleansing Oil</h5>
+                            <p class="text-muted small">Deep cleanse without stripping moisture.</p>
+                            <p class="fw-bold text-pink">$32.00</p>
+                            <button onclick="orderViaWhatsApp('Radiance Cleansing Oil', '$32.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="cleansers" data-name="Velvet Milk Cleanser">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Velvet Milk Cleanser</h5>
+                            <p class="text-muted small">Soothing cream wash for dry skin.</p>
+                            <p class="fw-bold text-pink">$30.00</p>
+                            <button onclick="orderViaWhatsApp('Velvet Milk Cleanser', '$30.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="cleansers" data-name="AHA Exfoliating Wash">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Exfoliating Gel Wash</h5>
+                            <p class="text-muted small">Alpha-hydroxy acids for resurfacing.</p>
+                            <p class="fw-bold text-pink">$34.00</p>
+                            <button onclick="orderViaWhatsApp('Exfoliating Gel Wash', '$34.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="cleansers" data-name="Pure Balance Foam">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1590156206121-6987740f1a07?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Pure Balance Foam</h5>
+                            <p class="text-muted small">Deep pore cleaning for oily skin.</p>
+                            <p class="fw-bold text-pink">$28.00</p>
+                            <button onclick="orderViaWhatsApp('Pure Balance Foam', '$28.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="cleansers" data-name="Micellar Zen Water">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556229167-73fe913217d0?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Micellar Zen Water</h5>
+                            <p class="text-muted small">Quick, fresh makeup removal.</p>
+                            <p class="fw-bold text-pink">$25.00</p>
+                            <button onclick="orderViaWhatsApp('Micellar Zen Water', '$25.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5 product-category" data-type="masks">
+                    <h3 class="playfair mb-4 border-bottom pb-2">Treatment Masks</h3>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="masks" data-name="Ivory Hydrating Mask">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Ivory Hydrating Mask</h5>
+                            <p class="text-muted small">Intense petal-soft hydration.</p>
+                            <p class="fw-bold text-pink">$38.00</p>
+                            <button onclick="orderViaWhatsApp('Ivory Hydrating Mask', '$38.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="masks" data-name="Clay Detox Mask">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Clay Detox Mask</h5>
+                            <p class="text-muted small">Pore-refining pink clay minerals.</p>
+                            <p class="fw-bold text-pink">$35.00</p>
+                            <button onclick="orderViaWhatsApp('Clay Detox Mask', '$35.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="masks" data-name="24k Gold Peel">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Gold Leaf Peel</h5>
+                            <p class="text-muted small">Luxury firming treatment with gold flakes.</p>
+                            <p class="fw-bold text-pink">$60.00</p>
+                            <button onclick="orderViaWhatsApp('Gold Leaf Peel', '$60.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="masks" data-name="Charcoal Purifier">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Charcoal Purifier</h5>
+                            <p class="text-muted small">Draws out toxins and pollutants.</p>
+                            <p class="fw-bold text-pink">$33.00</p>
+                            <button onclick="orderViaWhatsApp('Charcoal Purifier', '$33.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="masks" data-name="Cucumber Cool Soothe">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Cucumber Soothe</h5>
+                            <p class="text-muted small">Instant relief for sun-exposed skin.</p>
+                            <p class="fw-bold text-pink">$29.00</p>
+                            <button onclick="orderViaWhatsApp('Cucumber Soothe', '$29.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5 product-category" data-type="moisturizers">
+                    <h3 class="playfair mb-4 border-bottom pb-2">Daily Moisturizers</h3>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="moisturizers" data-name="Silk Finish Cream">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556228448-6d80d2874136?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Silk Finish Cream</h5>
+                            <p class="text-muted small">Ultra-lightweight with SPF 30.</p>
+                            <p class="fw-bold text-pink">$50.00</p>
+                            <button onclick="orderViaWhatsApp('Silk Finish Cream', '$50.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="moisturizers" data-name="Amber Elixir Balm">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1608592077365-c63991809009?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Amber Elixir Balm</h5>
+                            <p class="text-muted small">Rich intensive recovery for dry skin.</p>
+                            <p class="fw-bold text-pink">$65.00</p>
+                            <button onclick="orderViaWhatsApp('Amber Elixir Balm', '$65.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="moisturizers" data-name="Ceramide Barrier Gel">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1591130901921-3f0652bb3915?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Ceramide Barrier Gel</h5>
+                            <p class="text-muted small">Locks in moisture for 48 hours.</p>
+                            <p class="fw-bold text-pink">$46.00</p>
+                            <button onclick="orderViaWhatsApp('Ceramide Barrier Gel', '$46.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="moisturizers" data-name="Rosewater Day Dew">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Rosewater Day Dew</h5>
+                            <p class="text-muted small">Lightweight floral infusion for glow.</p>
+                            <p class="fw-bold text-pink">$38.00</p>
+                            <button onclick="orderViaWhatsApp('Rosewater Day Dew', '$38.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 product-card-item" data-type="moisturizers" data-name="Bakuchiol Lift Cream">
+                    <div class="card glass-card h-100 border-0">
+                        <div class="p-3"><img src="https://images.unsplash.com/photo-1556229174-5e42a09e45af?q=80&w=800" class="card-img-top rounded-4"></div>
+                        <div class="card-body text-center">
+                            <h5>Bakuchiol Lift Cream</h5>
+                            <p class="text-muted small">Natural retinol-alternative for firming.</p>
+                            <p class="fw-bold text-pink">$58.00</p>
+                            <button onclick="orderViaWhatsApp('Bakuchiol Lift Cream', '$58.00')" class="btn btn-buy w-100">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/products.js"></script>
+    <script src="assests/js/main.js"></script>
+</body>
+</html>

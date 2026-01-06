@@ -1,0 +1,50 @@
+/* Sticky Toolbar Styling */
+.sticky-toolbar {
+    top: 70px; /* Offset for the main Navbar height */
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* On mobile, we handle the layout differently to save space */
+@media (max-width: 991.98px) {
+    .sticky-toolbar {
+        top: 60px; /* Adjust if mobile navbar is shorter */
+        padding: 10px 0;
+    }
+
+    /* Horizontal scroll for filters on mobile */
+    .filter-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+
+    .filter-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+
+    .filter-group {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .btn-filter {
+        padding: 6px 15px;
+        font-size: 14px;
+        flex: 0 0 auto;
+    }
+}
+
+/* Ensure the search box looks clean */
+.search-box .form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+/* Smooth Category Transitions */
+.product-card-item, .product-category {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}

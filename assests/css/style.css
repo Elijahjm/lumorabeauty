@@ -1,0 +1,600 @@
+:root {
+    --primary-rose: #E6B7A9;
+    --ivory: #FFF9F6;
+    --charcoal: #1C1C1C;
+    --cta-pink: #D98C8C;
+    --cta-hover: #B76E79;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--ivory);
+    color: var(--charcoal);
+}
+
+h1, h2, h3, .brand-logo {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism Navbar */
+.custom-nav {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 0;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand-logo span { color: var(--cta-pink); }
+
+.btn-contact {
+    background-color: var(--cta-pink);
+    color: white;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: var(--cta-hover);
+    color: white;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 2s ease, opacity 1s ease-in-out; /* Smooth Zoom & Fade */
+}
+
+/* Subtle Zoom Animation on the Background */
+.carousel-item.active {
+    transform: scale(1.05);
+}
+
+/* Updated Hero Overlay for better visibility */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Option A: Solid Dark (Increased from 0.3 to 0.5) */
+    background: rgba(0, 0, 0, 0.5); 
+    
+    /* Option B: Modern Gradient (Darker at bottom, lighter at top) */
+    /* background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%); */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure all text inside hero is explicitly white if not already */
+.hero-content h1, 
+.hero-content p {
+    color: #ffffff !important;
+}
+
+
+/* Typography & Animations */
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    color: #FFF9F6;
+    font-weight: 700;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-content h1 {
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+}
+.hero-content p {
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+.hero-content .subtitle {
+    color: var(--primary-rose);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: #FFF9F6;
+    font-size: 1.25rem;
+}
+
+.btn-hero {
+    background-color: var(--cta-pink);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    border: none;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.btn-hero:hover {
+    background-color: var(--cta-hover);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Slide-Up Animation Logic */
+.carousel-item.active .slide-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.carousel-item.active .slide-up-delay-1 { animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
+.carousel-item.active .slide-up-delay-2 { animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
+.carousel-item.active .slide-up-delay-3 { animation: fadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Indicators */
+.carousel-indicators [button] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 8px;
+}
+
+/* Product Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid #F1DDD5;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Product Grid Styling */
+.products-preview {
+    background-color: var(--ivory);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(241, 221, 213, 0.5);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 35px rgba(230, 183, 169, 0.2);
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.glass-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.btn-buy {
+    background-color: var(--cta-pink);
+    color: white;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: var(--cta-hover);
+    color: white;
+}
+
+.btn-outline-dark {
+    border: 2px solid var(--charcoal);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--charcoal);
+    color: white;
+}
+
+
+
+/* Review Cards - Glassmorphism */
+.glass-review {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(230, 183, 169, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: 0.4s ease;
+    min-height: 250px;
+}
+
+.glass-review:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.02);
+}
+
+.review-text {
+    font-style: italic;
+    color: var(--charcoal);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.stars {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 0.9rem;
+}
+
+/* Adjusting Carousel Controls for visibility */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .glass-review {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* Custom Slider Buttons */
+.custom-slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cta-pink); /* Your Pink #D98C8C */
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 140, 140, 0.3);
+}
+
+.custom-slider-btn:hover {
+    background-color: var(--cta-hover); /* Your Darker Pink #B76E79 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(217, 140, 140, 0.5);
+}
+
+.custom-slider-btn i {
+    line-height: 0;
+}
+
+/* Glass Review Tweaks */
+.glass-review {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(230, 183, 169, 0.4);
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+/* Removing default Bootstrap control styles since we made custom ones */
+.carousel-control-prev, .carousel-control-next {
+    display: none;
+}
+
+
+/* Update the Glass Review height and margins */
+.glass-review {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(230, 183, 169, 0.4);
+    border-radius: 20px;
+    transition: 0.3s ease;
+    min-height: 180px; /* Reduced from 250px to 180px */
+    margin-bottom: 0; /* Ensure no bottom margin is pushing buttons */
+}
+
+/* Reduce the margin on the carousel container itself */
+.carousel-inner {
+    margin-bottom: 10px !important; /* Reduced from default or previous 40px */
+}
+
+/* Keep the buttons sleek */
+.custom-slider-btn {
+    width: 45px; /* Slightly smaller for a tighter look */
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--cta-pink);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Footer Styling */
+.main-footer {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(230, 183, 169, 0.3);
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    color: var(--cta-pink);
+    opacity: 1;
+    padding-left: 5px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--cta-pink);
+    text-decoration: none;
+    transition: 0.3s;
+    border: 1px solid rgba(230, 183, 169, 0.3);
+}
+
+.social-icon:hover {
+    background: var(--cta-pink);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.newsletter-form .form-control {
+    border-radius: 50px 0 0 50px;
+    border: 1px solid rgba(230, 183, 169, 0.4);
+    background: rgba(255, 255, 255, 0.5);
+    padding-left: 20px;
+}
+
+.btn-newsletter {
+    background-color: var(--cta-pink);
+    color: white;
+    border-radius: 0 50px 50px 0;
+    padding: 0 25px;
+    transition: 0.3s;
+}
+
+.btn-newsletter:hover {
+    background-color: var(--cta-hover);
+    color: white;
+}
+
+
+.text-pink { color: var(--cta-pink); }
+
+.btn-filter {
+    border: 1px solid var(--primary-rose);
+    color: var(--charcoal);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-filter.active, .btn-filter:hover {
+    background-color: var(--cta-pink);
+    color: white;
+    border-color: var(--cta-pink);
+}
+
+.search-box .form-control {
+    border-radius: 0 50px 50px 0;
+    padding: 12px;
+}
+
+.search-box .input-group-text {
+    border-radius: 50px 0 0 50px;
+}
+
+.sticky-top {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.playfair { font-family: 'Playfair Display', serif; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* for about us page*/
+/* Color Highlight */
+.text-pink {
+    color: #ff85a2 !important;
+}
+
+.bg-pink {
+    background-color: #ff85a2 !important;
+}
+
+/* Hover Effect for Value Cards */
+.transition-up {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-up:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 133, 162, 0.1) !important;
+}
+
+/* Animation Delays */
+.slide-up-delay-1 {
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Contact Form Styling */
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 133, 162, 0.1);
+    border-color: #ff85a2;
+    background-color: #fff !important;
+}
+
+.icon-box i {
+    transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover .icon-box i {
+    transform: scale(1.1);
+}
+
+.btn-pink {
+    background-color: #ff85a2;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+    background-color: #f76d8f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 133, 162, 0.3);
+}
+
+
+
+
+
+
+
+/* contact page css*/
+.contact-hero {
+    min-height: 450px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Optional: attachment: fixed; creates a nice parallax effect */
+    background-attachment: scroll; 
+}
+
+/* Light pink for text when on dark backgrounds */
+.text-pink-light {
+    color: #ffb1c1 !important;
+}
+
+/* Ensure the hero doesn't get hidden behind the navbar */
+@media (max-width: 768px) {
+    .contact-hero {
+        min-height: 350px;
+    }
+}
+
+
+
+
+/* conact form error messages*/
+
+.error-message {
+    color: #ff85a2;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    margin-left: 15px;
+    height: 15px; /* Prevents layout jumping */
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* Optional: Highlight the input border on error */
+.input-error {
+    border: 1px solid #ff85a2 !important;
+}
