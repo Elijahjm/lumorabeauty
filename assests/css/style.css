@@ -598,3 +598,47 @@ h1, h2, h3, .brand-logo {
 .input-error {
     border: 1px solid #ff85a2 !important;
 }
+
+
+/* Success Popup Styling */
+.success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* This ensures it is perfectly centered regardless of screen size */
+    transform: translate(-50%, -50%) scale(0.8); 
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    z-index: 10000; /* Stays on top of everything */
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 300px;
+}
+
+.success-popup.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.tick-circle {
+    width: 60px;
+    height: 60px;
+    background: #ff85a2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 15px;
+}
+
+.success-content h5 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}

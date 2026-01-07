@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>footer</title>
     <link rel="stylesheet" href="assests/css/style.css">
+    
 </head>
 <body>
  <footer class="main-footer pt-5 mt-5">
@@ -56,13 +57,18 @@
             <div class="col-lg-3">
                 <h6 class="fw-bold mb-4">Join the Glow Club</h6>
                 <p class="text-muted small">Subscribe for tips, tutorials, and exclusive offers.</p>
-                <form class="newsletter-form mt-3">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Email Address">
-                        <button class="btn btn-newsletter" type="button">Join</button>
-                    </div>
+    
+                <form action="https://formspree.io/f/mzdznzjk" method="POST" class="newsletter-form mt-3">
+                <div class="input-group">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                <button class="btn btn-newsletter" type="submit">Join</button>
+                </div>
+                <input type="hidden" name="_subject" value="New Glow Club Subscriber!">
                 </form>
             </div>
+
+
+           
 
         </div>
 
@@ -76,11 +82,24 @@
                 <p class="small text-muted mb-0">Developed By: Elijah Mwananduba</p>
             </div>
         </div>
+
+
+        
     </div>
 </footer>
 
-
+            <div id="subscriptionSuccess" class="success-popup">
+                <div class="success-content">
+                <div class="tick-circle">
+                <i class="bi bi-check-lg"></i>
+                </div>
+                <h5>Welcome to the Club!</h5>
+                <p>Your glow journey starts now.</p>
+                </div>
+            </div>
 
 <script src="assests/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
